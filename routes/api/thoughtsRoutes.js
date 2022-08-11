@@ -12,7 +12,7 @@ const {
 
 // /api/thoughts GET all thoughts and POST thought
 router.route('/').get(getThoughts).post(createThought);
-// /api/thoughts/:thoughtId GET, PUT, and DELETE a thought by id
+// /api/thoughts/:thoughtId GET, PUT, and DELETE a thought by idgi
 router.route('/:thoughtId').get(getThoughtById).put(updateThought).delete(deleteThought);
 // /api/thoughts/:thoughtId/reactions POST a reaction to a thought
 router.route('/:thoughtId/reactions').post(createReaction);
