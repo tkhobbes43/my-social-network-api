@@ -70,7 +70,7 @@ module.exports = {
     },
     // creating reaction and storing in single thought's reactions array field
     createReaction(req, res) {
-        console.log('You are adding an assignment');
+        console.log('You are adding a reaction!');
         console.log(req.body);
         Thought.findOneAndUpdate(
             { _id: req.params.thoughtId },
@@ -88,7 +88,7 @@ module.exports = {
     deleteReaction(req, res) {
         Thought.findOneAndUpdate(
             { _id: req.params.thoughtId },
-            { $pull: { reactions: { reactionId: req.params.reactionId } } },
+            { $pull: { reactions: req.params.reactionId } },
             { runValidators: true, new: true }
         )
             .then((thought) =>
